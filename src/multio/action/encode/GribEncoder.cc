@@ -245,7 +245,6 @@ struct QueriedMarsKeys {
     std::optional<std::int64_t> paramId{};
 };
 
-
 template <typename Dict>
 QueriedMarsKeys setMarsKeys(GribEncoder& g, const Dict& md) {
     QueriedMarsKeys ret;
