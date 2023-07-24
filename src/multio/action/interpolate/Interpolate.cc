@@ -152,7 +152,7 @@ eckit::Value getInputGrid(const eckit::LocalConfiguration& cfg, message::Metadat
     if (searchAtlasGridKind != md.end()) {  // metadata has always precedence
         // TODO: name is bad on purpose (no software support this at the moment)
         return searchAtlasGridKind->second.visit(eckit::Overloaded{
-            [](auto& v) -> util::IfTypeOf<decltype(v), MetadataTypes::AllNested, eckit::Value> { return {}; },
+            [](auto& v) -> util::IfTypeOf<decltype(v), MetadataTypes::Nested, eckit::Value> { return {}; },
             [](auto& vec) -> util::IfTypeOf<decltype(vec), MetadataTypes::Lists, eckit::Value> {
                 std::vector<eckit::Value> valList;
                 valList.reserve(vec.size());
