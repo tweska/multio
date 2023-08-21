@@ -90,8 +90,6 @@ private:
 
     template <typename T>
     message::Message setFieldValues(const message::Message& msg);
-
-
     message::Message setFieldValues(const double* values, size_t count);
     message::Message setFieldValues(const float* values, size_t count);
 
