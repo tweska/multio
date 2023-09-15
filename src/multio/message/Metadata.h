@@ -215,14 +215,6 @@ private:
     //----------------------------------------------------------------------------------------------------------------------
 };
 
-class MetadataWrongTypeException : public MetadataException {
-public:
-    MetadataWrongTypeException(const std::string& key, const eckit::CodeLocation& l = eckit::CodeLocation());
-    MetadataWrongTypeException(std::size_t requestedIndex, std::size_t containedIndex,
-                               const eckit::CodeLocation& l = eckit::CodeLocation());
-    MetadataWrongTypeException(const eckit::CodeLocation& l = eckit::CodeLocation());
-};
-
 //----------------------------------------------------------------------------------------------------------------------
 
 eckit::JSON& operator<<(eckit::JSON& json, const Metadata& metadata);
