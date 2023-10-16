@@ -96,6 +96,9 @@ struct Glossary {
     const KeyType typeOfLevel{"typeOfLevel"};
     const KeyType localDefinitionNumber{"localDefinitionNumber"};
 
+    const KeyType productDefinitionTemplateNumber{"productDefinitionTemplateNumber"};
+
+
     // Additional eccodes keys
     const KeyType setPackingType{"setPackingType"};
     const KeyType complexPacking{"complexPacking"};
@@ -149,6 +152,7 @@ struct Glossary {
     const KeyType level{"level"};
     const KeyType scaledValueOfFirstFixedSurface{"scaledValueOfFirstFixedSurface"};
     const KeyType scaledValueOfSecondFixedSurface{"scaledValueOfSecondFixedSurface"};
+
 
     // Time model
     const KeyType startTime{"startTime"};
