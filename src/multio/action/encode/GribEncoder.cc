@@ -535,7 +535,7 @@ void setDateAndStatisticalFields(GribEncoder& g, const message::Metadata& in,
     });
 
     auto refDateTimeTup = getReferenceDateTime(timeRef, md);
-    auto refDateTime = util::wrapDateTime(
+    auto refDateTime = util::normalizeDateTime(
         {util::toDateInts(std::get<0>(refDateTimeTup)), util::toTimeInts(std::get<1>(refDateTimeTup))});
     g.setValue("year", refDateTime.date.year);
     g.setValue("month", refDateTime.date.month);
@@ -545,8 +545,8 @@ void setDateAndStatisticalFields(GribEncoder& g, const message::Metadata& in,
     g.setValue("minute", refDateTime.time.minute);
     g.setValue("second", refDateTime.time.second);
 
-    auto currentDateTime = util::wrapDateTime({util::toDateInts(md.get<std::int64_t>(glossary().currentDate)),
-                                               util::toTimeInts(md.get<std::int64_t>(glossary().currentTime))});
+    auto currentDateTime = util::normalizeDateTime(
+        {util::toDateInts(md.get<std::int64_t>(glossary().currentDate)), util::toTimeInts(md.get<std::int64_t>(glossary().currentTime))});
 
     if (!isTimeRange) {
         if (timeRef == std::string("start")) {
@@ -562,7 +562,7 @@ void setDateAndStatisticalFields(GribEncoder& g, const message::Metadata& in,
         }
     }
     else if (gribEdition == "2") {
-        auto previousDateTime = util::wrapDateTime({util::toDateInts(md.get<std::int64_t>(glossary().previousDate)),
+        auto previousDateTime = util::normalizeDateTime({util::toDateInts(md.get<std::int64_t>(glossary().previousDate)),
                                                     util::toTimeInts(md.get<std::int64_t>(glossary().previousTime))});
 
         // Now just deal with GRIB2
@@ -676,7 +676,7 @@ void setDateAndStatisticalFields(GribEncoder& g, const message::Metadata& in,
     auto timeOfAnalysis = firstOf(lookUp<std::int64_t>(md, glossary().timeOfAnalysis)).value_or(0);
     if (dateOfAnalysis) {
         auto analysisDateTime
-            = util::wrapDateTime({util::toDateInts(*dateOfAnalysis), util::toTimeInts(timeOfAnalysis)});
+            = util::normalizeDateTime({util::toDateInts(*dateOfAnalysis), util::toTimeInts(timeOfAnalysis)});
         g.setValue("yearOfAnalysis", analysisDateTime.date.year);
         g.setValue("monthOfAnalysis", analysisDateTime.date.month);
         g.setValue("dayOfAnalysis", analysisDateTime.date.day);
