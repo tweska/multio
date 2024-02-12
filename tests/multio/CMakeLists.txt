@@ -53,6 +53,10 @@ ecbuild_add_test( TARGET    test_multio_metadata
                   SOURCES   test_multio_metadata.cc
                   LIBS      multio )
 
+ecbuild_add_test( TARGET    test_multio_select
+                  SOURCES   test_multio_select.cc
+                  LIBS      multio )
+
 
 # Test GRIB2 Product inference
 
