@@ -93,12 +93,13 @@ struct Glossary {
     const KeyType tablesVersion{"tablesVersion"};
     const KeyType localTablesVersion{"localTablesVersion"};
     const KeyType setLocalDefinition{"setLocalDefinition"};
-    const KeyType grib2LocalSectionNumber{"grib2LocalSectionNumber"};
+    const KeyType localDefinitionNumber{"localDefinitionNumber"};
+    const KeyType extraLocalSectionNumber{"extraLocalSectionNumber"};
+    const KeyType deleteExtraLocalSection{"deleteExtraLocalSection"};
 
     // Eccodes concepts
     const KeyType gridType{"gridType"};
     const KeyType typeOfLevel{"typeOfLevel"};
-    const KeyType localDefinitionNumber{"localDefinitionNumber"};
 
     const KeyType productDefinitionTemplateNumber{"productDefinitionTemplateNumber"};
 
