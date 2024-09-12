@@ -15,12 +15,14 @@ list( APPEND multio_action_plugins
     multio-action-null
     multio-action-print
     multio-action-select
+    multio-action-tag-filter
     multio-action-single-field-sink
     multio-action-sink
     multio-action-statistics
     multio-action-transport
     multio-action-renumber-healpix
     multio-action-interpolate-fesom
+    multio-action-ifs-mapping
 )
 
 if( HAVE_MIR )
