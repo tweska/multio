@@ -22,6 +22,7 @@ list( APPEND multio_action_plugins
     multio-action-renumber-healpix
     multio-action-interpolate-fesom
     multio-action-scale
+    multio-action-add-const
 )
 
 if( HAVE_MIR )
