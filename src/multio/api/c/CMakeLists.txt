@@ -23,6 +23,7 @@ list( APPEND multio_action_plugins
     multio-action-interpolate-fesom
     multio-action-scale
     multio-action-add-const
+    multio-action-windspeed
 )
 
 if( HAVE_MIR )

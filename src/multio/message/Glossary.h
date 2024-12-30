@@ -55,6 +55,7 @@ struct Glossary {
 
     // General keys
     const KeyType name{"name"};
+    const KeyType shortName{"shortName"};
     const KeyType paramId{"paramId"};
     const KeyType param{"param"};
     const KeyType globalSize{"globalSize"};
